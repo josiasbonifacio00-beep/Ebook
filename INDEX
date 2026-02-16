@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.tailwindcss.com; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; media-src 'none';">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e293b' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>DG</text></svg>">
+
+   <!-- "Ele dá força ao cansado, e multiplica as forças ao que não tem nenhum vigor." (Isaías 40:29) -->
+    
+    <title>Master Digital Growth</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/advanced-features.css">
+    
+    <script>
+        // Prevent right-click immediately
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        
+        // Prevent keyboard shortcuts immediately
+        document.addEventListener('keydown', e => {
+            if ((e.ctrlKey || e.metaKey) && ['u', 's', 'p', 'U', 'S', 'P'].includes(e.key)) {
+                e.preventDefault();
+            }
+            if (e.key === 'F12' || e.keyCode === 123) e.preventDefault();
+        });
+        
+        // Disable selection
+        document.addEventListener('selectstart', e => e.preventDefault());
+    </script>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    
+    <!-- PAGE LOADING ANIMATION -->
+    <div class="page-loader">
+        <div class="loader-container">
+            <div class="loader-spinner"></div>
+        </div>
+        <div class="loader-text">
+            Carregando
+            <span class="loader-dots">
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+            </span>
+        </div>
+    </div>
+    
+<div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-[550px] h-[550px] rounded-full blur-[120px] bg-cyan-500/20 glow-circle"></div>
+    <div class="absolute top-1/3 right-1/4 w-[650px] h-[650px] rounded-full blur-[130px] bg-purple-500/20 glow-circle"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-[600px] h-[600px] rounded-full blur-[120px] bg-pink-500/20 glow-circle"></div>
+</div>
+
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 z-50" style="width: 0%;"></div>
+
+<button id="scroll-to-top" class="fixed bottom-8 right-8 z-40 bg-gradient-to-br from-cyan-400 to-purple-400 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 transform" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+<button id="theme-toggle" class="theme-btn">
+    <div class="icon-wrapper">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </div>
+</button>
+
+<!-- ÍNDICE/MENU COM ÂNCORAS -->
+<nav id="toc-menu" class="fixed left-0 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 toc-nav toc-closed">
+    
+    <button id="toggle-toc" class="absolute right-[-30px] top-1/2 -translate-y-1/2 text-cyan-400/70 hover:text-cyan-400 bg-transparent border-none p-0 cursor-pointer flex items-center justify-center">
+        <svg id="seta-toc" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-500"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+
+    <div class="p-5 w-[200px]">
+        <div class="text-[10px] font-bold text-cyan-500/50 mb-4 uppercase tracking-widest">Navegação</div>
+        <ul class="space-y-3 text-sm">
+            <li><a href="#section-why" class="text-neutral-300 hover:text-white transition block">Por Que Este Guia?</a></li>
+            <li><a href="#section-learn" class="text-neutral-300 hover:text-white transition block">O Que Aprenderá</a></li>
+            <li><a href="#section-bonuses" class="text-neutral-300 hover:text-white transition block">Bônus Exclusivos</a></li>
+            <li><a href="#section-for-you" class="text-neutral-300 hover:text-white transition block">É Para Você?</a></li>
+            <li><a href="#section-testimonials" class="text-neutral-300 hover:text-white transition block">Depoimentos</a></li>
+            <li><a href="#section-faq" class="text-neutral-300 hover:text-white transition block">Perguntas</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- CANVAS PARA CONFETTI -->
+<canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 35; pointer-events: none;"></canvas>
+
+<div id="container">
+    <div class="tailwind css-uwf2km css-10v5rb">
+        <div class="min-h-screen relative overflow-hidden transition-colors duration-700 bg-[#0a0a0a]">
+            
+            <div class="relative z-10">
+                <div class="px-6 pt-24 pb-16 max-w-md mx-auto">
+                    <div class="mb-12 text-center" data-aos="fade-down">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 backdrop-blur-xl border hero-badge" data-aos="fade-up" data-aos-delay="300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-4 h-4 text-purple-400" aria-hidden="true">
+                                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                                <path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle>
+                            </svg>
+                            <span class="text-sm tracking-wide text-neutral-200">Já ajudou 15.247+ empreendedores</span>
+                        </div>
+                        
+                        <h1 class="text-5xl font-bold mb-5 tracking-tight leading-tight text-white" data-aos="fade-up" data-aos-delay="100">
+                            Construa um Negócio<br>
+                            <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Lucrativo Online</span>
+                        </h1>
+                        
+                        <p class="text-lg leading-relaxed max-w-sm mx-auto text-neutral-400" data-aos="fade-up" data-aos-delay="300">
+                            Guia estratégico completo para gerar renda escalável em 90 dias ou menos
+                        </p>
+                        <!-- Imagem hero da pasta img -->
+                        <div class="mb-12 flex justify-center" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="hero-image-wrapper">
+                                <div class="absolute -inset-6 rounded-[3rem] blur-3xl opacity-30 bg-gradient-to-br from-purple-600 via-purple-400 to-cyan-500 hero-image-blur"></div>
+                                <div class="relative backdrop-blur-xl rounded-[2rem] p-1 hero-image-container">
+                                    <img src="img/hero.webp" alt="The Modern Art of Wealth" class="hero-image-img">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center hero-text-container">
+                            <div class="mb-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3" class="feature-badge">
+                                    <span class="text-xs font-medium uppercase tracking-wider text-cyan-400">⏰ <span id="countdown-timer">48h 00m 00s</span></span>
+                                </div>
+                                <div class="flex items-center justify-center gap-4">
+                                    <span class="text-2xl line-through text-neutral-700">$97</span>
+                                    <span class="text-6xl font-bold text-white">$47</span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://www.instagram.com/ojosiasbonifacio/following/" class="w-full px-8 py-5 rounded-[1.5rem] font-bold text-lg flex items-center justify-center gap-3 relative overflow-hidden group transition-all duration-500 hover:scale-[1.05] active:scale-[0.95]" style="background: #ffffff; color: #0a0a0a; text-decoration: none; display: flex; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(139, 92, 246, 0.3); border: 1px solid rgba(255,255,255,0.8);">
+                                <div class="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500" style="background: radial-gradient(circle at center, rgba(139, 92, 246, 0.8) 0%, transparent 75%);"></div>
+                                <div class="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);"></div>
+                                <span class="relative z-10">ADQUIRIR AGORA</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform duration-300 group-hover:translate-x-2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                            </a>
+                            <p class="mt-4 text-sm text-neutral-500">✓ Download instantâneo • ✓ Garantia 30 dias • ✓ Sem risco</p>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="px-6 py-16 max-w-md mx-auto" id="section-why">
+                    <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="800">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">Por Que Este Guia?</h2>
+                        <p class="text-base leading-relaxed text-neutral-400" data-aos="fade-left" data-aos-delay="200">Tudo que você precisa para ter sucesso em um só lugar</p>
+                    </div> 
+
+                    <div class="space-y-5">
+                        <div class="relative group rounded-[1.5rem] overflow-hidden backdrop-blur-xl" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" tabindex="0" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: rgba(34, 211, 238, 0.15) 0px 0px 40px, rgba(255, 255, 255, 0.1) 0px 1px 1px inset;">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(circle at left top, rgba(34, 211, 238, 0.4) 0%, transparent 60%);"></div> 
+                            <div class="relative p-6 flex items-start gap-5">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-[1rem] flex items-center justify-center backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%); box-shadow: rgba(34, 211, 238, 0.15) 0px 0px 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-7 h-7 text-cyan-400" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                                </div> 
+                                <div class="flex-1 pt-1" data-aos="fade-left" data-aos-delay="300"><h3 class="text-xl font-bold mb-2 tracking-tight text-white">Implementação Rápida</h3><p class="text-sm leading-relaxed text-neutral-400">Comece a gerar resultados em horas, não em meses de pesquisa</p></div>
+                            </div>
+                        </div>
+
+                        <div class="relative group rounded-[1.5rem] overflow-hidden backdrop-blur-xl" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" tabindex="0" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: rgba(192, 132, 252, 0.15) 0px 0px 40px, rgba(255, 255, 255, 0.1) 0px 1px 1px inset;">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(circle at left top, rgba(192, 132, 252, 0.4) 0%, transparent 60%);"></div>
+                            <div class="relative p-6 flex items-start gap-5">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-[1rem] flex items-center justify-center backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%); box-shadow: rgba(192, 132, 252, 0.15) 0px 0px 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-7 h-7 text-purple-400" aria-hidden="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+                                </div> 
+                                <div class="flex-1 pt-1" data-aos="fade-left" data-aos-delay="400"><h3 class="text-xl font-bold mb-2 tracking-tight text-white">Estratégias Comprovadas</h3><p class="text-sm leading-relaxed text-neutral-400">Utilizadas por 10.000+ empreendedores com renda 6 e 7 dígitos</p></div>
+                            </div>
+                        </div> 
+
+                        <div class="relative group rounded-[1.5rem] overflow-hidden backdrop-blur-xl" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700" tabindex="0" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: rgba(244, 114, 182, 0.15) 0px 0px 40px, rgba(255, 255, 255, 0.1) 0px 1px 1px inset;">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(circle at left top, rgba(244, 114, 182, 0.4) 0%, transparent 60%);"></div> 
+                            <div class="relative p-6 flex items-start gap-5">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-[1rem] flex items-center justify-center backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="400" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%); box-shadow: rgba(244, 114, 182, 0.15) 0px 0px 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-7 h-7 text-pink-400" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                                </div>
+                                <div class="flex-1 pt-1" data-aos="fade-left" data-aos-delay="500"><h3 class="text-xl font-bold mb-2 tracking-tight text-white">Sem Risco</h3><p class="text-sm leading-relaxed text-neutral-400">Satisfação garantida: devolução completa em 30 dias</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-16 max-w-md mx-auto" id="section-learn">
+                    <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="800">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">O Que Você Aprenderá</h2>
+                        <p class="text-base leading-relaxed text-neutral-400" data-aos="fade-left" data-aos-delay="200">Estratégias passo a passo para transformar seu negócio</p>
+                    </div>
+
+                    <div class="rounded-[1.75rem] overflow-hidden backdrop-blur-xl mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.08) 0px 0px 50px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                        <div class="p-7 space-y-5">
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="150">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div>
+                                <p class="text-base leading-relaxed text-neutral-300">Como identificar nichos lucrativos em qual mercado</p>
+                            </div> 
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="200">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div> 
+                                <p class="text-base leading-relaxed text-neutral-300">Construir um funil de vendas com alta conversão do zero</p>
+                            </div> 
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="250">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div> 
+                                <p class="text-base leading-relaxed text-neutral-300">Dominar redes sociais e construir audiência fiel</p>
+                            </div>
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="300">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div> 
+                                <p class="text-base leading-relaxed text-neutral-300">Criar conteúdo compelling que vende consistentemente</p>
+                            </div>
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="350">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div>
+                                <p class="text-base leading-relaxed text-neutral-300">Escalar seu negócio com ferramentas comprovadas de automação</p>
+                            </div>
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="400">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div>
+                                <p class="text-base leading-relaxed text-neutral-300">Desenvolver fluxo de renda sustentável em 90 dias</p>
+                            </div>
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="450">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div> 
+                                <p class="text-base leading-relaxed text-neutral-300">Navegar pela lei e finanças com confiança e segurança</p>
+                            </div>
+                            <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="500">
+                                <div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-6 h-6 text-cyan-400 icon-drop-shadow-cyan" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div>
+                                <p class="text-base leading-relaxed text-neutral-300">Construir marca icônica que atrai clientes ideais</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="opacity: 1; transform: none;">
+                        <div class="backdrop-blur-xl rounded-[1.5rem] p-6 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border: 1px solid rgba(192, 132, 252, 0.2); box-shadow: rgba(192, 132, 252, 0.15) 0px 0px 30px;">
+                            <div class="relative z-10 flex items-center justify-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-purple-400" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                <p class="font-semibold text-purple-300">Plus: Lifetime access to all future updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-16 max-w-md mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="800">
+                        <div class="inline-flex items-center gap-2 mb-5" data-aos="zoom-in" data-aos-delay="100">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift w-9 h-9 text-purple-400 icon-drop-shadow-purple" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"></rect><path d="M12 8v13"></path><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path></svg>
+                        </div>
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">Bônus Exclusivos Inclusos</h2>
+                        <p class="text-base text-neutral-400" data-aos="fade-left" data-aos-delay="200">Ganhe R$ 111 em valor adicionado totalmente grátis</p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="relative overflow-hidden rounded-[1.5rem] backdrop-blur-xl group" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(34, 211, 238, 0.12) 0px 0px 35px, rgba(255, 255, 255, 0.1) 0px 1px 1px inset;">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(circle at right top, rgba(34, 211, 238, 0.25) 0%, transparent 60%);"></div>
+                            <div class="absolute top-5 right-5 px-3 py-1.5 rounded-full backdrop-blur-md z-10" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: rgba(34, 211, 238, 0.12) 0px 0px 15px;"><span class="text-xs font-bold tracking-wide text-cyan-400">R$ 97 de Valor</span></div>
+                            <div class="relative p-6 pt-14 flex items-start gap-5 pr-28">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-[1rem] flex items-center justify-center backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%); box-shadow: rgba(34, 211, 238, 0.12) 0px 0px 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-7 h-7 text-cyan-400" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></div>
+                                <div class="flex-1" data-aos="fade-left" data-aos-delay="300"><h3 class="text-lg font-bold mb-2 tracking-tight text-white">Bônus #1: Checklist de Implementação Rápida</h3><p class="text-sm leading-relaxed text-neutral-400">Checklist passo a passo para implementar tudo nos primeiros 7 dias</p></div>
+                            </div>
+                        </div>
+
+                        <div class="relative overflow-hidden rounded-[1.5rem] backdrop-blur-xl group" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(192, 132, 252, 0.12) 0px 0px 35px, rgba(255, 255, 255, 0.1) 0px 1px 1px inset;">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(circle at right top, rgba(192, 132, 252, 0.25) 0%, transparent 60%);"></div>
+                            <div class="absolute top-5 right-5 px-3 py-1.5 rounded-full backdrop-blur-md z-10" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: rgba(192, 132, 252, 0.12) 0px 0px 15px;"><span class="text-xs font-bold tracking-wide text-purple-400">R$ 97 de Valor</span></div>
+                            <div class="relative p-6 pt-14 flex items-start gap-5 pr-28">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-[1rem] flex items-center justify-center backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%); box-shadow: rgba(192, 132, 252, 0.12) 0px 0px 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones w-7 h-7 text-purple-400" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></div>
+                                <div class="flex-1" data-aos="fade-left" data-aos-delay="400"><h3 class="text-lg font-bold mb-2 tracking-tight text-white">Bônus #2: Versão em Áudio</h3><p class="text-sm leading-relaxed text-neutral-400">Escute o guia completo em qualquer lugar - ideal para no carro ou academia</p></div>
+                            </div>
+                        </div>
+
+                        <div class="relative overflow-hidden rounded-[1.5rem] backdrop-blur-xl group" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(244, 114, 182, 0.12) 0px 0px 35px, rgba(255, 255, 255, 0.1) 0px 1px 1px inset;">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(circle at right top, rgba(244, 114, 182, 0.25) 0%, transparent 60%);"></div>
+                            <div class="absolute top-5 right-5 px-3 py-1.5 rounded-full backdrop-blur-md z-10" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: rgba(244, 114, 182, 0.12) 0px 0px 15px;"><span class="text-xs font-bold tracking-wide text-pink-400">R$ 127 de Valor</span></div>
+                            <div class="relative p-6 pt-14 flex items-start gap-5 pr-28">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-[1rem] flex items-center justify-center backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="400" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%); box-shadow: rgba(244, 114, 182, 0.12) 0px 0px 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-7 h-7 text-pink-400" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg></div>
+                                <div class="flex-1" data-aos="fade-left" data-aos-delay="500"><h3 class="text-lg font-bold mb-2 tracking-tight text-white">Bônus #3: Templates & Ferramentas</h3><p class="text-sm leading-relaxed text-neutral-400">Templates prontos, scripts e ferramentas para acelerar seu crescimento</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-7 text-center rounded-[1.5rem] p-6 backdrop-blur-xl" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.08) 0%, rgba(192, 132, 252, 0.08) 50%, rgba(244, 114, 182, 0.08) 100%); border: 1px solid rgba(192, 132, 252, 0.2); box-shadow: rgba(192, 132, 252, 0.12) 0px 0px 40px;">
+                        <p class="font-bold text-xl tracking-tight text-white">Valor Total: R$ 225</p>
+                        <p class="text-sm mt-1.5 text-cyan-400">Seu hoje por apenas R$ 47</p>
+                    </div>
+                </div>
+
+                <!-- NEWSLETTER INLINE -->
+                <div class="px-6 py-4 max-w-md mx-auto">
+                    <div class="newsletter-section" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold mb-2 text-white">📧 Receba atualizações exclusivas</h3>
+                        <p class="text-sm text-neutral-400 mb-4">Novos conteúdos e estratégias entregues diretamente no seu email</p>
+                        <form class="newsletter-form flex gap-2">
+                            <input type="email" class="newsletter-input flex-1" placeholder="seu@email.com" required>
+                            <button type="submit" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-semibold transition duration-300 text-sm">Inscrever</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="px-6 py-16 max-w-md mx-auto" id="section-for-you">
+                    <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="800">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">Isso É Para Você?</h2>
+                        <p class="text-base leading-relaxed text-neutral-400" data-aos="fade-left" data-aos-delay="200">Este guia é planejado para empreendedores sérios</p>
+                    </div>
+
+                    <div class="rounded-[1.75rem] overflow-hidden backdrop-blur-xl mb-6" data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.08) 0%, rgba(34, 211, 238, 0.04) 100%); border: 1px solid rgba(34, 211, 238, 0.2); box-shadow: rgba(34, 211, 238, 0.12) 0px 0px 40px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                        <div class="p-7">
+                            <h3 class="text-xl font-bold mb-5 flex items-center gap-3 tracking-tight text-white" data-aos="fade-right" data-aos-delay="150"><span class="w-9 h-9 rounded-[0.75rem] flex items-center justify-center" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(34, 211, 238, 0.1) 100%); box-shadow: rgba(34, 211, 238, 0.3) 0px 0px 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-cyan-400" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Indicado Para:</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><p class="text-base leading-relaxed text-neutral-300">Empreendedores iniciantes prontos para começar seu primeiro negócio online</p></div>
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="250"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><p class="text-base leading-relaxed text-neutral-300">Proprietários existentes que querem escalar e otimizar</p></div>
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><p class="text-base leading-relaxed text-neutral-300">Freelancers que desejam construir fluxos de renda passiva</p></div>
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="350"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><p class="text-base leading-relaxed text-neutral-300">Qualquer um que busca independência financeira através de produtos digitais</p></div>
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><p class="text-base leading-relaxed text-neutral-300">Profissionais de marketing que desejam dominar estratégias de conversão</p></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-[1.75rem] overflow-hidden backdrop-blur-xl" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(244, 114, 182, 0.08) 0%, rgba(239, 68, 68, 0.08) 100%); border: 1px solid rgba(244, 114, 182, 0.2); box-shadow: rgba(244, 114, 182, 0.12) 0px 0px 40px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                        <div class="p-7">
+                            <h3 class="text-xl font-bold mb-5 flex items-center gap-3 tracking-tight text-white" data-aos="fade-right" data-aos-delay="250"><span class="w-9 h-9 rounded-[0.75rem] flex items-center justify-center" style="background: linear-gradient(135deg, rgba(244, 114, 182, 0.2) 0%, rgba(239, 68, 68, 0.2) 100%); box-shadow: rgba(244, 114, 182, 0.3) 0px 0px 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-pink-400" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>Não É Para:</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-5 h-5 mt-0.5 flex-shrink-0 text-pink-400" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><p class="text-base leading-relaxed text-neutral-300">Pessoas procurando enriquecimento rápido ou "esquemas"</p></div>
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="350"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-5 h-5 mt-0.5 flex-shrink-0 text-pink-400" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><p class="text-base leading-relaxed text-neutral-300">Aqueles que não estão dispostos a colocar a mão na massa</p></div>
+                                <div class="flex items-start gap-3" data-aos="fade-right" data-aos-delay="400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-5 h-5 mt-0.5 flex-shrink-0 text-pink-400" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><p class="text-base leading-relaxed text-neutral-300">Qualquer um que espere resultados sem implementação</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-16 max-w-md mx-auto" id="section-stats">
+                    <div class="text-center mb-10" style="opacity: 1; transform: none;" data-aos="fade-down" data-aos-duration="800">
+                        <h2 class="text-4xl font-bold tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">Confie em Milhares</h2>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3 mb-14">
+                        <div class="rounded-[1.25rem] overflow-hidden backdrop-blur-xl text-center" data-aos="zoom-in" data-aos-delay="100" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.06) 0px 0px 30px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                            <div class="p-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-6 h-6 mx-auto mb-2" aria-hidden="true" style="color: rgba(34, 211, 238, 0.6); filter: drop-shadow(rgba(34, 211, 238, 0.6) 0px 0px 8px);"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg><p class="text-xl font-bold mb-1 tracking-tight text-white" data-aos="fade-up" data-aos-delay="150">15,247</p><p class="text-xs text-neutral-500">Clientes Satisfeitos</p></div>
+                        </div>
+                        <div class="rounded-[1.25rem] overflow-hidden backdrop-blur-xl text-center" data-aos="zoom-in" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.06) 0px 0px 30px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                            <div class="p-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-6 h-6 mx-auto mb-2" aria-hidden="true" style="color: rgba(192, 132, 252, 0.6); filter: drop-shadow(rgba(192, 132, 252, 0.6) 0px 0px 8px);"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg><p class="text-xl font-bold mb-1 tracking-tight text-white" data-aos="fade-up" data-aos-delay="250">4.9/5</p><p class="text-xs text-neutral-500">Avaliação Média</p></div>
+                        </div>
+                        <div class="rounded-[1.25rem] overflow-hidden backdrop-blur-xl text-center" data-aos="zoom-in" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.06) 0px 0px 30px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                            <div class="p-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open w-6 h-6 mx-auto mb-2" aria-hidden="true" style="color: rgba(244, 114, 182, 0.6); filter: drop-shadow(rgba(244, 114, 182, 0.6) 0px 0px 8px);"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><p class="text-xl font-bold mb-1 tracking-tight text-white" data-aos="fade-up" data-aos-delay="350">250+</p><p class="text-xs text-neutral-500">Páginas de Conteúdo</p></div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-[1.75rem] overflow-hidden backdrop-blur-xl mb-12" style="background: linear-gradient(135deg, rgba(192, 132, 252, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px solid rgba(192, 132, 252, 0.2); box-shadow: rgba(192, 132, 252, 0.15) 0px 0px 40px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset; opacity: 1; transform: none;">
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-16 h-16 rounded-[1.25rem] flex items-center justify-center" style="background: linear-gradient(135deg, rgba(192, 132, 252, 0.4) 0%, rgba(139, 92, 246, 0.4) 100%); box-shadow: rgba(192, 132, 252, 0.4) 0px 0px 30px;"><span class="text-white text-2xl font-bold tracking-tight">JB</span></div>
+                                <div><h3 class="text-xl font-bold tracking-tight text-white">Josias Bonifacio</h3><p class="text-sm text-neutral-400">Estrategista de Negócios & Autor</p></div>
+                            </div>
+                            <p class="text-base leading-relaxed text-neutral-300">Com mais de 15 anos de experiência em negócios digitais, ajudei milhares de empreendedores a construir negócios lucrativos e sustentáveis. Este guia contém tudo que gostaria de ter sabido quando comecei.</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-8" style="opacity: 1; transform: none;" data-aos="fade-down" data-aos-duration="800">
+                        <h3 class="text-3xl font-bold tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">O Que Dizem Nossos Clientes</h3>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="rounded-[1.5rem] overflow-hidden backdrop-blur-xl relative" data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.08) 0px 0px 35px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                            <div class="p-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote w-8 h-8 mb-3 text-purple-400/30" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+                                <div class="flex gap-1 mb-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                </div>
+                                <p class="text-base leading-relaxed mb-4 text-neutral-300">"Este guia transformou completamente como eu abordava meu negócio. Em 60 dias, dobrei minha receita. Absolutamente vale cada centavo!"</p>
+                                <div><p class="font-bold tracking-tight text-white">Sarah Mitchell</p><p class="text-sm text-neutral-500">Empreendedora Digital</p></div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-[1.5rem] overflow-hidden backdrop-blur-xl relative" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.08) 0px 0px 35px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset; opacity: 1; transform: none;">
+                            <div class="p-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote w-8 h-8 mb-3 text-purple-400/30" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+                                <div class="flex gap-1 mb-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-purple-400 icon-drop-shadow-small" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                </div>
+                                <p class="text-base leading-relaxed mb-4 text-neutral-300">"Claro, acionável e focado em resultados. Já li dezenas de livros de negócios, mas este se destaca pela abordagem prática."</p>
+                                <div><p class="font-bold tracking-tight text-white">Marcus Chen</p><p class="text-sm text-neutral-500">Consultor de Marketing</p></div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-[1.5rem] overflow-hidden backdrop-blur-xl relative" data-aos="fade-up" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(139, 92, 246, 0.08) 0px 0px 35px, rgba(255, 255, 255, 0.08) 0px 1px 1px inset;">
+                    </div>
+                </div>
+
+                <div class="px-6 py-16 max-w-md mx-auto" id="section-faq">
+                    <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="800">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight text-white" data-aos="fade-right" data-aos-delay="100">Perguntas Frequentes</h2>
+                        <p class="text-base leading-relaxed text-neutral-400" data-aos="fade-left" data-aos-delay="200">Tudo que você precisa saber</p>
+                    </div>
+                    <div class="space-y-4">
+                        <details class="group rounded-[1.5rem] overflow-hidden backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255, 255, 255, 0.05); cursor: pointer;">
+                            <summary class="w-full px-6 py-5 flex items-center justify-between text-left list-none outline-none">
+                                <span class="font-bold text-base pr-4 tracking-tight text-neutral-300">Como faço para acessar o PDF após a compra?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-400 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                            </summary>
+                            <div class="px-6 pb-5 text-neutral-400 border-t border-white/5 pt-4">
+                                Imediatamente após sua compra ser confirmada, você receberá um email com o link de download. O PDF é seu para manter para sempre.
+                            </div>
+                        </details>
+
+                        <details class="group rounded-[1.5rem] overflow-hidden backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="150" style="background: rgba(255, 255, 255, 0.05); cursor: pointer;">
+                            <summary class="w-full px-6 py-5 flex items-center justify-between text-left list-none outline-none">
+                                <span class="font-bold text-base pr-4 tracking-tight text-neutral-300">Existe garantia de devolução?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-400 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                            </summary>
+                            <div class="px-6 pb-5 text-neutral-400 border-t border-white/5 pt-4">
+                                Sim! Oferecemos garantia de devolução completa em 30 dias. Se não estiver completamente satisfeito, basta enviar um email e reembolsaremos - sem perguntas.
+                            </div>
+                        </details>
+
+                        <details class="group rounded-[1.5rem] overflow-hidden backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255, 255, 255, 0.05); cursor: pointer;">
+                            <summary class="w-full px-6 py-5 flex items-center justify-between text-left list-none outline-none">
+                                <span class="font-bold text-base pr-4 tracking-tight text-neutral-300">Isso é apropriado para iniciantes completos?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-400 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                            </summary>
+                            <div class="px-6 pb-5 text-neutral-400 border-t border-white/5 pt-4">
+                                Absolutamente! Este guia é projetado para todos os níveis, levando você do básico até estratégias avançadas.
+                            </div>
+                        </details>
+
+                        <details class="group rounded-[1.5rem] overflow-hidden backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="250" style="background: rgba(255, 255, 255, 0.05); cursor: pointer;">
+                            <summary class="w-full px-6 py-5 flex items-center justify-between text-left list-none outline-none">
+                                <span class="font-bold text-base pr-4 tracking-tight text-neutral-300">Em qual formato o produto é entregue?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-400 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                            </summary>
+                            <div class="px-6 pb-5 text-neutral-400 border-t border-white/5 pt-4">
+                                Você receberá um PDF profissionalmente formatado que funciona em todos os dispositivos - desktop, tablet e celular.
+                            </div>
+                        </details>
+
+                        <details class="group rounded-[1.5rem] overflow-hidden backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="300" style="background: rgba(255, 255, 255, 0.05); cursor: pointer;">
+                            <summary class="w-full px-6 py-5 flex items-center justify-between text-left list-none outline-none">
+                                <span class="font-bold text-base pr-4 tracking-tight text-neutral-300">Vocês oferecem suporte ao cliente?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-400 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                            </summary>
+                            <div class="px-6 pb-5 text-neutral-400 border-t border-white/5 pt-4">
+                                Sim! Oferecemos suporte por email para todos os clientes para ajudá-lo a ter sucesso.
+                            </div>
+                        </details>
+
+                        <details class="group rounded-[1.5rem] overflow-hidden backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="350" style="background: rgba(255, 255, 255, 0.05); cursor: pointer;">
+                            <summary class="w-full px-6 py-5 flex items-center justify-between text-left list-none outline-none">
+                                <span class="font-bold text-base pr-4 tracking-tight text-neutral-300">Haverá atualizações?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-400 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                            </summary>
+                            <div class="px-6 pb-5 text-neutral-400 border-t border-white/5 pt-4">
+                                Sim! Você terá acesso vitalício a todas as futuras atualizações sem custo adicional.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- NEW FEATURES SECTIONS -->
+                
+                <!-- Countdown Timer -->
+                <div class="px-6 py-16 max-w-md mx-auto">
+                    <div class="text-center" data-aos="fade-down">
+                        <h2 class="text-3xl font-bold mb-4 tracking-tight text-white">⏰ Oferta por Tempo Limitado</h2>
+                        <p class="text-neutral-400 mb-8">Apenas 47 cópias disponíveis neste preço</p>
+                        <div id="countdown-timer"></div>
+                    </div>
+                </div>
+
+                <!-- Testimonials Carousel -->
+                <div class="px-6 py-16 max-w-2xl mx-auto">
+                    <div id="testimonials-section" data-aos="fade-up"></div>
+                </div>
+
+                <!-- Blog Preview -->
+                <div class="px-6 py-16 max-w-6xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-down">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight text-white">📚 Aprenda com Nossos Artigos</h2>
+                    </div>
+                    <div class="mb-8">
+                        <input type="text" id="blog-search" placeholder="🔍 Buscar artigos..."
+                               class="w-full p-4 border border-white/10 rounded-lg bg-white/5 text-white placeholder-neutral-500 focus:border-purple-400 outline-none transition">
+                    </div>
+                    <div id="blog-results"></div>
+                </div>
+
+                <!-- Final CTA -->
+                <div class="px-6 py-16 max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rounded-[2rem] overflow-hidden backdrop-blur-xl shadow-2xl relative" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%); border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: rgba(139, 92, 246, 0.15) 0px 0px 60px, rgba(255, 255, 255, 0.12) 0px 1px 1px inset;">
+                        <div class="absolute -inset-[1px] rounded-[2rem] opacity-30 pointer-events-none" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(192, 132, 252, 0.2) 50%, rgba(244, 114, 182, 0.2) 100%); filter: blur(20px);"></div>
+                        <div class="relative p-8">
+                            <div class="text-center mb-8">
+                                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 backdrop-blur-xl" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(192, 132, 252, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%); border: 1px solid rgba(192, 132, 252, 0.3); box-shadow: rgba(192, 132, 252, 0.2) 0px 0px 25px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-4 h-4 text-purple-400" aria-hidden="true">
+                                        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                                        <path d="M20 2v4"></path>
+                                        <path d="M22 4h-4"></path>
+                                        <circle cx="4" cy="20" r="2"></circle>
+                                    </svg>
+                                    <span class="text-sm font-semibold tracking-wide text-purple-300">Oferta por Tempo Limitado</span>
+                                </div>
+
+                                <h2 class="text-4xl font-bold mb-4 tracking-tight text-white" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Comece Sua Jornada Hoje</h2>
+                                <p class="text-base leading-relaxed mb-8 text-neutral-400" data-aos="fade-left" data-aos-delay="300">Junte-se aos milhares de empreendedores que transformaram seu negócio com este guia</p>
+
+                                <div class="mb-8" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="flex items-center justify-center gap-4 mb-2">
+                                        <span class="text-2xl line-through text-neutral-700">$97</span>
+                                        <span class="text-6xl font-bold tracking-tight text-white">$47</span>
+                                    </div>
+                                </div>
+
+                                <button class="w-full px-8 py-5 rounded-[1.5rem] font-semibold text-lg flex items-center justify-center gap-3 relative overflow-hidden group mb-6" tabindex="0" data-aos="fade-up" data-aos-delay="350" style="background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%); color: rgb(10, 10, 10); box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 50px, rgba(255, 255, 255, 0.3) 0px 10px 40px -5px;">
+                                    <span class="relative z-10">Acesso Imediato</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform">
+                                        <path d="M5 12h14m-7-7 7 7-7 7"></path>
+                                    </svg>
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);"></div>
+                                </button>
+                                
+                                <div class="flex items-center justify-center gap-6 flex-wrap mb-6" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock w-4 h-4 text-neutral-500" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span class="text-sm text-neutral-500">Pagamento Seguro</span></div>
+                                    <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download w-4 h-4 text-neutral-500" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg><span class="text-sm text-neutral-500">Acesso Instantâneo</span></div>
+                                    <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-ccw w-4 h-4 text-neutral-500" aria-hidden="true"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path><path d="M16 16h5v5"></path></svg><span class="text-sm text-neutral-500">Devolução 30 Dias</span></div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-[1.5rem] p-5 text-center backdrop-blur-xl" data-aos="zoom-in" data-aos-delay="450" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%); border: 1px solid rgba(34, 211, 238, 0.2); box-shadow: rgba(34, 211, 238, 0.12) 0px 0px 30px;">
+                                <p class="font-bold tracking-tight text-cyan-400">✓ Garantia de Devolução de 30 Dias</p>
+                                <p class="text-sm mt-1 text-neutral-400">Se não estiver satisfeito, obtenha reembolso completo. Sem perguntas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center" data-aos="fade-up" data-aos-delay="500">
+                        <p class="text-sm text-neutral-600">🔥 Apenas 47 cópias disponíveis neste preço</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 py-12 text-center" data-aos="fade-up" data-aos-delay="550">
+                    <p class="text-sm transition-colors duration-500 text-neutral-600">© 2026 Josias Bonifacio. Todos os direitos reservados.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Load Service Worker for PWA -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').catch(err => {
+      console.log('SW registration failed:', err);
+    });
+  }
+</script>
+
+<!-- Main Scripts in order -->
+<script src="js/script.js"></script>
+<script src="js/security-advanced.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/live-chat.js"></script>
+<script src="js/newsletter.js"></script>
+<script src="js/payments.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/utils.js"></script>
+
+<!-- Initialize all modules -->
+<script>
+  // Initialize features
+  document.addEventListener('DOMContentLoaded', function() {
+    // Security & Rate Limiting
+    const rateLimiter = new RateLimiter(100, 60000);
+    const geoChecker = new GeoLocationChecker();
+    const captcha = new CAPTCHAHandler();
+    
+    // PWA & Analytics
+    window.analytics = new AdvancedAnalytics();
+    
+    // Live Chat
+    window.liveChat = new LiveChat();
+    
+    // Newsletter
+    window.newsletter = new NewsletterManager();
+    
+    // Dark Mode
+    new DarkModeToggle();
+    
+    // Testimonials (exemplo)
+    const testimonials = [
+      {
+        name: 'João Silva',
+        role: 'Empresário Digital',
+        quote: 'Meu negócio cresceu 300% em 3 meses com as estratégias aprendidas!'
+      },
+      {
+        name: 'Maria Santos',
+        role: 'Especialista em Marketing',
+        quote: 'O melhor investimento que fiz. Retorno garantido!'
+      }
+    ];
+    
+    window.testimonials_carousel = new DynamicTestimonials(testimonials);
+    window.testimonials_carousel.render('testimonials-section', true);
+    
+    // Countdown (exemplo - oferta com 7 dias)
+    const offerDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+    window.countdown = new CountdownTimer(offerDate);
+    const countdownEl = document.getElementById('countdown-timer');
+    if (countdownEl) window.countdown.render('countdown-timer');
+    
+    // Discount Popup
+    const discount = new DiscountPopup(30, '🎁 Ganhe 30% OFF!');
+    setTimeout(() => discount.show(), 5000);
+    
+    // Payments (configure com suas chaves)
+    // window.paymentHandler = new PaymentHandler({
+    //   stripeKey: 'pk_live_YOUR_KEY',
+    //   paypalClientId: 'YOUR_CLIENT_ID'
+    // });
+    
+    // Admin Dashboard (configure com sua senha)
+    // window.adminDash = new AdminDashboard('sua_senha_super_segura');
+    
+    // Blog Engine
+    window.blog = new BlogEngine();
+    
+    // Check geo location
+    geoChecker.checkAndBlock();
+  });
+</script>
+</body>
+</html>
+
+<!-- "Todo aquele, pois, que escuta estas minhas palavras e as pratica, assemelhá-lo-ei ao homem prudente, que edificou a sua casa sobre a rocha." (Mateus 7:24) -->
