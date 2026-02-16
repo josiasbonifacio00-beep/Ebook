@@ -1,0 +1,49 @@
+# Proteção contra Web Scrapers e Fazedores de Download
+# ===============================================
+
+# Bloquear tudo para bots maliciosos
+User-agent: HTTrack
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: Offline
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+User-agent: urllib
+Disallow: /
+
+User-agent: httplib
+Disallow: /
+
+# Bots legítimos - acesso limitado
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckBot
+Disallow: /admin
+Disallow: /private
+Crawl-delay: 1
+
+# Bloquear todos os outros bots
+User-agent: *
+Disallow: /
+
+# Sitemap
+Sitemap: https://seusite.com/sitemap.xml

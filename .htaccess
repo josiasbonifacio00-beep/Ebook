@@ -1,0 +1,104 @@
+# Proteção contra HTTrack e Web Scrapers
+# ===========================================
+
+# Desabilitar listing de diretórios
+Options -Indexes
+
+# Bloquear User-Agents suspeitos
+SetEnvIf User-Agent HTTrack BadBot=1
+SetEnvIf User-Agent wget BadBot=1
+SetEnvIf User-Agent curl BadBot=1
+SetEnvIf User-Agent "WebCopier" BadBot=1
+SetEnvIf User-Agent "Teleport" BadBot=1
+SetEnvIf User-Agent "WebStripper" BadBot=1
+SetEnvIf User-Agent "SiteSnatcher" BadBot=1
+SetEnvIf User-Agent "ProWebWalker" BadBot=1
+SetEnvIf User-Agent "CheeseBot" BadBot=1
+SetEnvIf User-Agent "NetMechanic" BadBot=1
+SetEnvIf User-Agent "Offline" BadBot=1
+SetEnvIf User-Agent "Mata" BadBot=1
+SetEnvIf User-Agent "eCatch" BadBot=1
+SetEnvIf User-Agent "SuperBot" BadBot=1
+SetEnvIf User-Agent "VCI" BadBot=1
+SetEnvIf User-Agent "WebAuto" BadBot=1
+SetEnvIf User-Agent "FetchURL" BadBot=1
+SetEnvIf User-Agent "WebFetch" BadBot=1
+SetEnvIf User-Agent "SiteUpload" BadBot=1
+SetEnvIf User-Agent "Grub" BadBot=1
+SetEnvIf User-Agent "WebZip" BadBot=1
+SetEnvIf User-Agent "larbin" BadBot=1
+SetEnvIf User-Agent "psbot" BadBot=1
+SetEnvIf User-Agent "AspSeek" BadBot=1
+SetEnvIf User-Agent "Wizard" BadBot=1
+SetEnvIf User-Agent "MOM" BadBot=1
+SetEnvIf User-Agent "WebMastered" BadBot=1
+SetEnvIf User-Agent "LoreIPBot" BadBot=1
+SetEnvIf User-Agent "Crescent" BadBot=1
+SetEnvIf User-Agent "ZyBorg" BadBot=1
+SetEnvIf User-Agent "HOtbot" BadBot=1
+SetEnvIf User-Agent "Wget" BadBot=1
+SetEnvIf User-Agent "lftp" BadBot=1
+SetEnvIf User-Agent "libwww" BadBot=1
+SetEnvIf User-Agent "Python" BadBot=1
+SetEnvIf User-Agent "java" BadBot=1
+SetEnvIf User-Agent "Scrapy" BadBot=1
+SetEnvIf User-Agent "scrapy" BadBot=1
+
+# Bloquear acesso
+<RequireAll>
+    Require all granted
+    Require not env BadBot
+</RequireAll>
+
+# Desabilitar outros métodos perigosos
+<Limit PUT DELETE>
+    deny from all
+</Limit>
+
+# Proteção contra acesso a arquivos sensíveis
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
+    Deny from all
+</FilesMatch>
+
+# Desabilitar listagem de diretórios
+IndexIgnore *
+
+# Cache headers para prevenir download
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Desabilitar HTTP TRACE
+TraceEnable off
+
+# Bloquear hotlinking de imagens
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Bloquear download direto de arquivos
+    RewriteCond %{REQUEST_FILENAME} \.(jpg|jpeg|gif|png|pdf|zip|rar|7z)$ [NC]
+    RewriteCond %{HTTP_REFERER} !^http://www.seusite.com [NC]
+    RewriteCond %{HTTP_REFERER} !^http://seusite.com [NC]
+    RewriteCond %{HTTP_REFERER} !^$ 
+    RewriteRule \.(jpg|jpeg|gif|png|pdf|zip|rar|7z)$ - [F]
+    
+    # Bloquear requests sem User-Agent
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^\ $
+    RewriteRule ^.* - [F,L]
+</IfModule>
+
+# Proteção contra timing attacks
+<IfModule mod_version.c>
+    <IfVersion >= 2.4>
+        Header always set Server "Apache"
+        Header always set X-Powered-By ""
+        Header onsuccess edit Set-Cookie ^(.*)$ "$1; HttpOnly; Secure; SameSite=Strict"
+    </IfVersion>
+</IfModule>
